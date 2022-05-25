@@ -4,7 +4,7 @@
 // DOM -> Document Object Mdoel
 
 const id = document.querySelector("#id"),
-pswrod = document.querySelector("#psword"),
+psword = document.querySelector("#psword"),
 loginBtn = document.querySelector("button");
 
 loginBtn.addEventListener("click",login);
@@ -12,7 +12,7 @@ loginBtn.addEventListener("click",login);
 function login(){
     const req = {
         id : id.value,
-        psword: pswrod.value,
+        psword: psword.value,
     };
     
     fetch("/login", {
@@ -38,6 +38,6 @@ function login(){
         }
     }).catch((err) => {
         console.error("로그인 중 에러 발생");
-    })
+    });
    
-};
+}
