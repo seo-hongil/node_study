@@ -7,8 +7,8 @@ const router = express.Router();
 const ctrl = require("./home.ctrl");
 
 // 요청왔을 때 처리되는 로직이 controller니까 빼주기
-router.get("/",ctrl.home);
-router.get("/login",ctrl.login);
-
+router.get("/",ctrl.output.home);
+router.get("/login",ctrl.output.login);
+router.post("/login",ctrl.process.login); 
 //app.js에서 사용하기 위해 연결하는 부분 ( 외부에서 사용 가능하도록 내보내기 )
 module.exports = router;
