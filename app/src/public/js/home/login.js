@@ -28,8 +28,16 @@ function login(){
         //res.json() 메서드를 통해 Response stream을 읽어올 수 있다.
         // 그래서 다 읽은 body의 text(= res.json() )를 promise 형태로 반환한다. 
         
-    .then((res) => console.log(res))
-    // parameter로 오는 값은 생략을 할 수가 있다.
-    // = then(console.log);
-    
+        // parameter로 오는 값은 생략을 할 수가 있다.
+        // = then(console.log);
+    .then((res) => {
+        if(res.success){
+            location.href = "/";
+        }else{
+            alert(res.msg);
+        }
+    }).catch((err) => {
+        console.error("로그인 중 에러 발생");
+    })
+   
 };
