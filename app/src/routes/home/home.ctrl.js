@@ -19,9 +19,9 @@ const UserStorage = require("../../models/UserStorage")
 };
 
 const process = {
-    login : (req, res) => {
+    login : async (req, res) => {
         const user = new User(req.body);
-        const response = user.login();
+        const response = await user.login();
         
         return res.json(response);
     },
@@ -29,7 +29,8 @@ const process = {
     register : (req, res) => {
         const user = new User(req.body);
         const response = user.register();
-    }
+        return res.json(response);
+    },
 };
  
 //밖에서 사용할 수 있게 exports
