@@ -25,6 +25,11 @@ const process = {
         
         return res.json(response);
     },
+    
+    register : (req, res) => {
+        const user = new User(req.body);
+        const response = user.register();
+    }
 };
  
 //밖에서 사용할 수 있게 exports
