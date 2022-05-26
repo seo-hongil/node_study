@@ -3,7 +3,7 @@
 const fs = require("fs").promises;
 
 class UserStorage{
-    static #getUserInfo(){
+    static #getUserInfo(data, id){
         const users = JSON.parse(data);
         const idx = users.id.indexOf(id);
         const usersKeys = Object.keys(users); //=>[id,psword,name]
